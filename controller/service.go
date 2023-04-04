@@ -71,6 +71,7 @@ func RegisterHandler(c *gin.Context) {
 	err = db.Where("username = ?", user.Username).First(&userVerify).Error
 	if err != nil {
 		c.JSON(http.StatusBadRequest, config.MESSAGE_DATA_ERRFOUND)
+		return
 	}
 	
 	//Check password security requirement
@@ -84,8 +85,13 @@ func RegisterHandler(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, config.MESSAGE_PASSWORD_ERROR)
 	}
 	user.Password = hashPass
-
-
+	err = db.Create(&user).Error
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, config.MESSAGE_DATA_ERRPROCESS)
+		return
+	}
+	c.JSON(http.StatusOK, config.MESSAGE_SUCCESS)
+	return
 }
 
 
