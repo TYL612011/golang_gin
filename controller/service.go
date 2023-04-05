@@ -1,11 +1,11 @@
 package controller
 
 import (
-	"net/http"
-	"github.com/gin-gonic/gin"
-	"time"
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"log"
+	"net/http"
+	"time"
 
 	config "golang_gin/config"
 	model "golang_gin/model"
@@ -18,7 +18,7 @@ func LoginHandler(c *gin.Context) {
 		ip = c.Request.RemoteAddr
 	}
 
-	var user, userVerify model.User 
+	var user, userVerify model.User
 	if err := c.ShouldBindJSON(&user); err != nil {
 		c.JSON(http.StatusBadRequest, config.MESSAGE_DATA_BADREQUEST)
 		return
@@ -32,7 +32,7 @@ func LoginHandler(c *gin.Context) {
 	defer config.CloseConnectToMysql(db)
 	err = db.Where("Username = ?", user.Username).First(&userVerify).Error
 	if err != nil {
-		log.Println(fmt.Sprintf("ERROR - Login request: User %s (%s) login failed - User doesn't exist",user.Username, ip))
+		log.Println(fmt.Sprintf("ERROR - Login request: User %s (%s) login failed - User doesn't exist", user.Username, ip))
 		c.JSON(http.StatusNotFound, config.MESSAGE_DATA_ERRNOTFOUND)
 		return
 	}
@@ -49,9 +49,9 @@ func LoginHandler(c *gin.Context) {
 			c.AbortWithStatus(http.StatusInternalServerError)
 			return
 		}
-		log.Println(fmt.Sprintf("SUCCESS - Login request: User %s (%s) login success",user.Username, ip))
+		log.Println(fmt.Sprintf("SUCCESS - Login request: User %s (%s) login success", user.Username, ip))
 		c.JSON(http.StatusOK, gin.H{
-			"access_token": model.AccessToken{Token: accessToken, Exp: time.Now().Add(time.Minute * 15).Unix()},
+			"access_token":  model.AccessToken{Token: accessToken, Exp: time.Now().Add(time.Minute * 15).Unix()},
 			"refresh_token": model.RefreshToken{Token: refreshToken},
 		})
 	} else {
@@ -64,7 +64,6 @@ func Protected(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "protected"})
 }
 
-
 func RegisterHandler(c *gin.Context) {
 	//Get request ip client
 	ip := c.Request.Header.Get("X-Forwarded-For")
@@ -72,7 +71,7 @@ func RegisterHandler(c *gin.Context) {
 		ip = c.Request.RemoteAddr
 	}
 
-	var user, userVerify model.User 
+	var user, userVerify model.User
 	if err := c.ShouldBindJSON(&user); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
@@ -84,14 +83,14 @@ func RegisterHandler(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, config.MESSAGE_CONNECT_ERROR)
 	}
 	defer config.CloseConnectToMysql(db)
-	fmt.Println("User information: ",user)
+	fmt.Println("User information: ", user)
 	err = db.Where("username = ?", user.Username).First(&userVerify).Error
 	if err == nil {
-		log.Println(fmt.Sprintf("ERROR - Request registered user : User %s (ip: %s) was failed because user exist",user.Username, ip))
+		log.Println(fmt.Sprintf("ERROR - Request registered user : User %s (ip: %s) was failed because user exist", user.Username, ip))
 		c.JSON(http.StatusBadRequest, config.MESSAGE_DATA_ERRFOUND)
 		return
 	}
-	
+
 	//Check password security requirement
 	status := utility.ValidatePassword(string(user.Password))
 	if !status {
@@ -112,5 +111,3 @@ func RegisterHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, config.MESSAGE_SUCCESS)
 	return
 }
-
-

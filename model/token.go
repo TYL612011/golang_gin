@@ -1,11 +1,10 @@
 package model
 
 type AccessToken struct {
-	Token	string	`json:"token"`
-	Exp		int64	`json:"exp"`
+	Token string `json:"token"`
+	Exp   int64  `json:"exp"`
 }
 
 type RefreshToken struct {
-	Token	string	`json:"token"`
+	Token string `json:"token"`
 }
-

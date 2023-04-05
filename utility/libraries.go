@@ -1,12 +1,12 @@
 package utility
 
 import (
+	"io/ioutil"
 	"math/rand"
 	"os"
-	"io/ioutil"
 )
 
-func RandSecret() ([]byte, error){
+func RandSecret() ([]byte, error) {
 	buf := make([]byte, 128)
 	_, err := rand.Read(buf)
 	if err != nil {
@@ -32,11 +32,11 @@ func WriteSecretToFile(secret []byte, namefile string) error {
 }
 
 func ReadFile(filename string) ([]byte, error) {
-    // Read the entire contents of the file into memory
-    content, err := ioutil.ReadFile(filename)
-    if err != nil {
-        return nil, err
-    }
+	// Read the entire contents of the file into memory
+	content, err := ioutil.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
 
-    return content, nil
+	return content, nil
 }

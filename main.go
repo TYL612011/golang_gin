@@ -1,17 +1,16 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"fmt"
 	"log"
-	"time"
 	"os"
+	"time"
 
+	config "golang_gin/config"
 	controller "golang_gin/controller"
 	utility "golang_gin/utility"
-	config "golang_gin/config"
-	
 	// config "golang_gin/config"
 )
 
@@ -21,7 +20,6 @@ func init() {
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
-	// Thiết lập ghi log vào file "app.log"
 	logPath := os.Getenv("LOGPATH")
 	file, err := os.OpenFile(logPath, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
@@ -29,15 +27,13 @@ func init() {
 	}
 	log.SetOutput(file)
 	log.SetFlags(0)
-	// Thiết lập tiền tố cho thông tin log
 	log.SetPrefix(time.Now().Format("2006-01-02 15:04:05") + " ")
 
-
-	//Init secret and write to file 
+	//Init secret and write to file
 	filename := config.FileSecretToken
 	content, err := utility.RandSecret()
 	if err != nil {
-		log.Fatal(fmt.Sprintf("Init secret key for token with error : %s",err))
+		log.Fatal(fmt.Sprintf("Init secret key for token with error : %s", err))
 		return
 	}
 	utility.WriteSecretToFile(content, filename)
@@ -48,7 +44,7 @@ func init() {
 	fmt.Println("start init migrate")
 	err = controller.InitDB()
 	if err != nil {
-		log.Fatal(fmt.Sprintf("Init migrate database with error : %s",err))
+		log.Fatal(fmt.Sprintf("Init migrate database with error : %s", err))
 		return
 	}
 	fmt.Println("2.INIT DATABASE SUCCESS")

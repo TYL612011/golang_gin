@@ -1,11 +1,11 @@
 package controller
 
 import (
-	model "golang_gin/model"
 	config "golang_gin/config"
+	model "golang_gin/model"
 )
 
-func InitDB() error{
+func InitDB() error {
 	db, err := config.InitConnectToMysql()
 	if err != nil {
 		return err
@@ -14,5 +14,3 @@ func InitDB() error{
 	db.Table("users").AutoMigrate(&model.User{})
 	return nil
 }
-
-
