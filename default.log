@@ -1,0 +1,31 @@
+2023-04-05 04:48:23 Init secret key for token success
+2023-04-05 04:49:32 Init secret key for token success
+2023-04-05 04:50:24 Init secret key for token success
+2023-04-05 04:51:11 Init secret key for token success
+2023-04-05 04:51:11 Init migrate database with error : dial tcp :0: connect: connection refused
+2023-04-05 05:00:25 Init secret key for token success
+2023-04-05 05:00:25 Init migrate database with error : dial tcp :0: connect: connection refused
+2023-04-05 05:01:32 Init secret key for token success
+2023-04-05 05:01:32 Init migrate database with error : dial tcp :0: connect: connection refused
+2023-04-05 05:03:05 Init secret key for token success
+2023-04-05 05:03:05 Init migrate database with error : dial tcp :0: connect: connection refused
+2023-04-05 05:03:57 Init secret key for token success
+2023-04-05 05:03:57 Init migrate database success
+2023-04-05 05:04:24 Init secret key for token success
+2023-04-05 05:04:24 Init migrate database success
+2023-04-05 07:58:29 Init secret key for token success
+2023-04-05 07:58:29 Init migrate database success
+2023-04-05 08:04:15 Init secret key for token success
+2023-04-05 08:04:15 Init migrate database success
+2023-04-05 08:06:04 Init secret key for token success
+2023-04-05 08:06:04 Init migrate database success
+2023-04-05 08:10:00 Init secret key for token success
+2023-04-05 08:10:00 Init migrate database success
+2023-04-05 08:10:00 Request user login
+2023-04-05 08:34:06 Init secret key for token success
+2023-04-05 08:34:06 Init migrate database success
+2023-04-05 08:34:06 ERROR - Login request: User ThaiNHc (192.168.59.1:56603) login failed with incorrect password information
+2023-04-05 08:34:06 ERROR - Login request: User ThaiNHc (192.168.59.1:56603) login failed with incorrect password information
+2023-04-05 08:34:06 SUCCESS - Login request: User ThaiNHc (192.168.59.1:56603) login success
+2023-04-05 08:34:06 ERROR - Request registered user : User BacNTb (ip: 192.168.59.1:56603) was failed because user exist
+2023-04-05 08:34:06 SUCCESS - Request registered user : User KienQT (ip: 192.168.59.1:56603) was registered

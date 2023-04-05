@@ -27,8 +27,19 @@ func CheckPassword(password, hashedPassword string) (bool, error) {
     return true, nil
 }
 
-
+//r"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
 func ValidatePassword(password string) bool {
-    match, _ := regexp.MatchString("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\\-=\\[\\]{};:\\\\|,.<>\\/?]).{8,}$", password)
-    return match
+    if len(password) < 8 {
+        return false
+    }
+    match1, _ := regexp.MatchString(".*([A-Z])+.*", password)
+    match2, _ := regexp.MatchString(".*([a-z])+.*", password)
+    match3, _ := regexp.MatchString(".*([@$!%*?&])+.*", password)
+    match4, _ := regexp.MatchString(".*(\\d)+.*", password)
+    if match1 && match2 && match3 && match4 {
+        return true
+    } else {
+        return false
+    }
+    
 }

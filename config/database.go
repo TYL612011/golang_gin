@@ -21,6 +21,7 @@ func urlConnect() string{
 
 func InitConnectToMysql() (*gorm.DB, error){
 	dsn := urlConnect()
+	fmt.Println(urlConnect())
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		return nil, err

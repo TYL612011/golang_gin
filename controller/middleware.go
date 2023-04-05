@@ -8,6 +8,7 @@ import (
     "strings"
 
     utility "golang_gin/utility"
+    config "golang_gin/config"
 )
 
 func AuthMiddleware() gin.HandlerFunc {
@@ -25,14 +26,15 @@ func AuthMiddleware() gin.HandlerFunc {
             if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
                 return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
             }
-            filename := "secret.txt"
+            filename := config.FileSecretToken
+            fmt.Println("This is filename: ", filename)
             secret, err := utility.ReadFile(filename)
             if err != nil {
                 return nil, err
             }
             return []byte(secret), nil // replace with your own secret key
         })
-
+        fmt.Println("This is token information: ", token)
         if err != nil || !token.Valid {
             c.AbortWithStatus(http.StatusUnauthorized)
             return
