@@ -40,3 +40,7 @@ func ReadFile(filename string) ([]byte, error) {
 
 	return content, nil
 }
+
+func ConvertStringToTimestamp(timeStr string) {
+
+}

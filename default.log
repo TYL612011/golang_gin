@@ -1,31 +1,66 @@
-2023-04-05 04:48:23 Init secret key for token success
-2023-04-05 04:49:32 Init secret key for token success
-2023-04-05 04:50:24 Init secret key for token success
-2023-04-05 04:51:11 Init secret key for token success
-2023-04-05 04:51:11 Init migrate database with error : dial tcp :0: connect: connection refused
-2023-04-05 05:00:25 Init secret key for token success
-2023-04-05 05:00:25 Init migrate database with error : dial tcp :0: connect: connection refused
-2023-04-05 05:01:32 Init secret key for token success
-2023-04-05 05:01:32 Init migrate database with error : dial tcp :0: connect: connection refused
-2023-04-05 05:03:05 Init secret key for token success
-2023-04-05 05:03:05 Init migrate database with error : dial tcp :0: connect: connection refused
-2023-04-05 05:03:57 Init secret key for token success
-2023-04-05 05:03:57 Init migrate database success
-2023-04-05 05:04:24 Init secret key for token success
-2023-04-05 05:04:24 Init migrate database success
-2023-04-05 07:58:29 Init secret key for token success
-2023-04-05 07:58:29 Init migrate database success
-2023-04-05 08:04:15 Init secret key for token success
-2023-04-05 08:04:15 Init migrate database success
-2023-04-05 08:06:04 Init secret key for token success
-2023-04-05 08:06:04 Init migrate database success
-2023-04-05 08:10:00 Init secret key for token success
-2023-04-05 08:10:00 Init migrate database success
-2023-04-05 08:10:00 Request user login
-2023-04-05 08:34:06 Init secret key for token success
-2023-04-05 08:34:06 Init migrate database success
-2023-04-05 08:34:06 ERROR - Login request: User ThaiNHc (192.168.59.1:56603) login failed with incorrect password information
-2023-04-05 08:34:06 ERROR - Login request: User ThaiNHc (192.168.59.1:56603) login failed with incorrect password information
-2023-04-05 08:34:06 SUCCESS - Login request: User ThaiNHc (192.168.59.1:56603) login success
-2023-04-05 08:34:06 ERROR - Request registered user : User BacNTb (ip: 192.168.59.1:56603) was failed because user exist
-2023-04-05 08:34:06 SUCCESS - Request registered user : User KienQT (ip: 192.168.59.1:56603) was registered
+2023-04-07 03:55:20 Init secret key for token success
+2023-04-07 03:55:20 Init migrate database with error : dial tcp :0: connect: connection refused
+2023-04-07 03:56:04 Init secret key for token success
+2023-04-07 03:56:04 Init migrate database success
+2023-04-07 03:56:04 ERROR - Middle Auth : signature is invalid
+2023-04-07 03:56:04 SUCCESS - Login request: User NhuanNT (192.168.59.1:60130) login success
+2023-04-07 03:56:04 ERROR - Middle Auth : signature is invalid
+2023-04-07 04:03:31 Init secret key for token success
+2023-04-07 04:03:31 Init migrate database success
+2023-04-07 04:03:31 SUCCESS - Login request: User NhuanNT (192.168.59.1:60708) login success
+2023-04-07 04:07:41 Init secret key for token success
+2023-04-07 04:07:41 Init migrate database success
+2023-04-07 04:07:41 SUCCESS - Login request: User NhuanNT (192.168.59.1:61030) login success
+2023-04-07 04:08:42 Init secret key for token success
+2023-04-07 04:08:42 Init migrate database success
+2023-04-07 04:08:42 SUCCESS - Login request: User NhuanNT (192.168.59.1:61102) login success
+2023-04-07 04:08:42 ERROR - Middle Auth : invalid character '\x14' in string literal
+2023-04-07 04:08:42 ERROR - Middle Auth : invalid character '\b' in string literal
+2023-04-07 04:08:42 ERROR - Middle Auth : signature is invalid
+2023-04-07 07:52:42 Init secret key for token success
+2023-04-07 07:52:42 Init migrate database success
+2023-04-07 08:03:44 Init secret key for token success
+2023-04-07 08:03:44 Init migrate database success
+2023-04-07 08:05:14 Init secret key for token success
+2023-04-07 08:05:14 Init migrate database success
+2023-04-07 08:06:14 Init secret key for token success
+2023-04-07 08:06:14 Init migrate database success
+2023-04-07 08:06:14 SUCCESS - Login request: User NhuanNT (192.168.59.1:53669) login success
+2023-04-07 08:06:14 ERROR - Middle Auth : invalid character '\b' in string literal
+2023-04-07 08:06:14 ERROR - Middle Auth : signature is invalid
+2023-04-07 08:06:14 ERROR - Request registered user : User NhuanNT (ip: 192.168.59.1:53669) was failed because user exist
+2023-04-07 08:06:14 ERROR - Request registered user : User NhuanNT (ip: 192.168.59.1:53669) was failed because user exist
+2023-04-07 08:10:08 Init secret key for token success
+2023-04-07 08:10:08 Init migrate database success
+2023-04-07 08:10:08 ERROR - Middle Auth : signature is invalid
+2023-04-07 08:23:55 Init secret key for token success
+2023-04-07 08:23:55 Init migrate database success
+2023-04-07 08:25:09 Init secret key for token success
+2023-04-07 08:25:09 Init migrate database success
+2023-04-07 08:25:09 ERROR - Login request: User NhuanT (192.168.59.1:55050) login failed - User doesn't exist
+2023-04-07 08:25:09 SUCCESS - Login request: User ThaiNHc (192.168.59.1:55050) login success
+2023-04-07 08:25:09 ERROR - Middle Auth : signature is invalid
+2023-04-07 15:36:49 SUCCESS - Init secret key for token success
+2023-04-07 15:36:49 SUCCESS - Init migrate database success
+2023-04-07 15:37:06 SUCCESS - Init secret key for token success
+2023-04-07 15:37:06 SUCCESS - Init migrate database success
+2023-04-07 15:37:06 SUCCESS - Login request: User ThaiNHc (192.168.59.1:55935) login success
+2023-04-07 15:38:22 SUCCESS - Init secret key for token success
+2023-04-07 15:38:22 SUCCESS - Init migrate database success
+2023-04-07 15:38:22 SUCCESS - Login request: User ThaiNHc (192.168.59.1:56030) login success
+2023-04-07 15:43:31 SUCCESS - Init secret key for token success
+2023-04-07 15:43:31 SUCCESS - Init migrate database success
+2023-04-07 15:43:31 SUCCESS - Login request: User ThaiNHc (192.168.59.1:56392) login success
+2023-04-07 15:47:04 SUCCESS - Init secret key for token success
+2023-04-07 15:47:04 SUCCESS - Init migrate database success
+2023-04-07 15:47:04 SUCCESS - Login request: User ThaiNHc (192.168.59.1:56634) login success
+2023-04-07 15:47:04 ERROR - Middle Auth : signature is invalid
+2023-04-07 15:47:04 ERROR - Middle Auth : illegal base64 data at input byte 0
+2023-04-07 15:50:26 SUCCESS - Init secret key for token success
+2023-04-07 15:50:26 SUCCESS - Init migrate database success
+2023-04-07 15:50:26 SUCCESS - Login request: User ThaiNHc (192.168.59.1:56858) login success
+2023-04-07 15:50:26 ERROR - Middle Auth : signature is invalid
+2023-04-07 15:50:26 ERROR - Middle Auth : Token is expired
+2023-04-07 15:50:26 ERROR - Middle Auth : Token is expired
+2023-04-07 15:55:16 SUCCESS - Init secret key for token success
+2023-04-07 15:55:16 SUCCESS - Init migrate database success

@@ -2,17 +2,27 @@ package utility
 
 import (
 	"github.com/dgrijalva/jwt-go"
+	config "golang_gin/config"
+	"log"
 	"time"
 )
 
 func GenerateAccessToken(username string) (string, error) {
+	loc, err := time.LoadLocation(config.TIME_ZONE)
+
+	if err != nil {
+		log.Println("Can't load time zone for rendering access token")
+		return "", err
+	}
+
 	// Define token object with specific jwt information
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"username": username,
-		"exp":      time.Now().Add(time.Minute * 15).Unix(),
+		"exp":      time.Now().In(loc).Add(time.Minute * 2).Unix(),
+		"role":     1,
 	})
-	filename := "secret.txt"
-	secret, err := ReadFile(filename)
+	secret, err := ReadFile("secret_access.txt")
+
 	if err != nil {
 		return "", err
 	}
@@ -22,11 +32,19 @@ func GenerateAccessToken(username string) (string, error) {
 func GenerateRefreshToken(username string) (string, error) {
 	token := jwt.New(jwt.SigningMethodHS256)
 	claims := token.Claims.(jwt.MapClaims)
-	claims["username"] = username
-	claims["exp"] = time.Now().Add(time.Hour * 24 * 7).Unix()
 
-	filename := "secret.txt"
-	secret, err := ReadFile(filename)
+	loc, err := time.LoadLocation(config.TIME_ZONE)
+
+	if err != nil {
+		log.Println("Can't load time zone for rendering access token")
+		return "", err
+	}
+
+	claims["username"] = username
+	claims["exp"] = time.Now().In(loc).Add(time.Hour * 24 * 7).Unix()
+	claims["role"] = 2
+
+	secret, err := ReadFile("secret_refresh.txt")
 	if err != nil {
 		return "", err
 	}
